@@ -2,21 +2,14 @@ import time
 import random
 
 print("="*40)
-print(" "*10 + "Mines" + " "*10)
-print(" "*5 + "Regras do jogo:" + " "*5)
-print(" "*3 + "Acerte o máximo de diamantes que conseguir sem escolher as bombas!" + " "*3)
+print("-"*10 + "Mines" + "-"*10)
+print("-"*5 + "Regras do jogo" + "-"*5)
+print("-"*3 + "Acerte o máximo de diamantes que conseguir sem escolher as bombas!" + "-"*3)
 
 nome = input("Insira seu nome para jogar: ")
 print(f"Seja bem-vindo {nome}!")
 
-qtdBombas = input("Escolha o número de bombas (quanto maior o número de bombas, maior sua pontuação): ")
-
-def gerarFiguras(qtdBombas: int, tamanhoTabuleiro: int):
-    escolhaCerta = ['💎']
-
-    if qtdBombas >= tamanhoTabuleiro - 1:
-        raise ValueError("Número de bombas não pode preencher o tabuleiro inteiro")
-
+qtdBombas = int(input("Escolha o número de bombas (quanto maior o número de bombas, maior sua pontuação): "))
 
 
 tamanho = 4
