@@ -10,9 +10,9 @@ print(f"\nSeja bem-vindo, {nome}!\n")
 
 tamanho = 4
 total_celulas = tamanho * tamanho
-base_aposta = 10.00  # valor fixo
+base_aposta = 10.00  
 
-# Validação da quantidade de bombas
+
 while True:
     try:
         qtdBombas = int(input("Escolha o número de bombas (mín 1, máx 15): "))
@@ -61,7 +61,7 @@ def salvar_ranking(nome, valor, status):
     with open("ranking.txt", "a", encoding="utf-8") as f:
         f.write(f"{nome} | R$ {valor:.2f} | {status}\n")
 
-# Inicializa o jogo
+
 matrizReal, matrizVisivel = matrizBomba()
 letras = ['A', 'B', 'C', 'D']
 pontuacao = 0
@@ -97,7 +97,7 @@ while True:
         break
     else:
         pontuacao += 1
-        multiplicador += 0.2
+        multiplicador += 0.4
 
         if pontuacao == diamantes_totais:
             mostrarMatriz(matrizReal)
@@ -107,12 +107,12 @@ while True:
             salvar_ranking(nome, ganho, "🎉 VENCEU")
             break
 
-        # Pergunta se o jogador quer continuar
+
         decisao = input("Deseja continuar jogando? (s = sim / n = sacar): ").strip().lower()
         if decisao == 'n':
             ganho = base_aposta * multiplicador
             mostrarMatriz(matrizVisivel)
             print(f"\n✅ Você decidiu sacar! Parabéns, {nome}!")
-            print(f"💰 Valor sacado: R$ {ganho:.2f}")
+            print(f"💰 Valor total: R$ {ganho:.2f}")
             salvar_ranking(nome, ganho, "✅ SACOU")
             break
